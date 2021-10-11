@@ -4,6 +4,7 @@ import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll'
 import ErrorBoundry from '../components/ErrorBoundry';
 import './App.css';
+import { robots } from "../robots"; //robots.js
 
 
 
@@ -17,9 +18,10 @@ class App extends Component{
     }
 
     componentDidMount(){
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response=>  response.json())
-            .then(users => {this.setState({robots: users})} );
+        this.setState({ robots: robots });
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        //     .then(response=>  response.json())
+        //     .then(users => {this.setState({robots: users})} );
     }
 
     onSearchChange = (event) => {
